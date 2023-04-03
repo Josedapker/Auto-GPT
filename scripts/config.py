@@ -34,7 +34,7 @@ class Config(metaclass=Singleton):
         self.smart_token_limit = int(os.getenv("SMART_TOKEN_LIMIT", 8000))
         
         self.openai_api_key = os.getenv("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")
-        #self.elevenlabs_api_key = os.getenv("ELEVENLABS_API_KEY")
+        self.elevenlabs_api_key = os.getenv("ELEVENLABS_API_KEY")
 
         # Initialize the OpenAI API client
         openai.api_key = self.openai_api_key
