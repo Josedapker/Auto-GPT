@@ -237,12 +237,12 @@ def prompt_user():
 
     # Enter up to 5 goals for the AI
     print_to_console(
-        "Enter up to 5 goals for your AI: ",
+        "Enter up to 10 goals for your AI: ",
         Fore.GREEN,
         "For example: \nIncrease net worth, Grow Twitter Account, Develop and manage multiple businesses autonomously'")
     print("Enter nothing to load defaults, enter nothing when finished.", flush=True)
     ai_goals = []
-    for i in range(5):
+    for i in range(10):
         ai_goal = input(f"{Fore.LIGHTBLUE_EX}Goal{Style.RESET_ALL} {i+1}: ")
         if ai_goal == "":
             break
