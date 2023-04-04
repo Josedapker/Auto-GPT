@@ -51,7 +51,7 @@ def print_assistant_thoughts(assistant_reply):
     try:
         # Parse and print Assistant response
         assistant_reply_json = fix_and_parse_json(assistant_reply)
-
+        
         try:
             assistant_thoughts = assistant_reply_json.get("thoughts")
             if assistant_thoughts:
@@ -68,6 +68,8 @@ def print_assistant_thoughts(assistant_reply):
                 assistant_thoughts_speak = None
         except Exception as e:
             assistant_thoughts_text = "The AI's response was unreadable."
+            print_to_console("Error: \n", Fore.RED, str(e))
+
 
         print_to_console(
             f"{ai_name.upper()} THOUGHTS:",

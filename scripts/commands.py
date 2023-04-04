@@ -149,17 +149,24 @@ def delete_memory(key):
         print("Invalid key, cannot delete memory.")
         return None
 
+def is_valid_int(value):
+    try:
+        int(value)
+        return True
+    except ValueError:
+        return False
 
 def overwrite_memory(key, string):
-    if int(key) >= 0 and key < len(mem.permanent_memory):
+    if is_valid_int(key) and 0 <= int(key) < len(mem.permanent_memory):
         _text = "Overwriting memory with key " + \
             str(key) + " and string " + string
-        mem.permanent_memory[key] = string
+        mem.permanent_memory[int(key)] = string
         print(_text)
         return _text
     else:
         print("Invalid key, cannot overwrite memory.")
         return None
+
 
 
 def shutdown():
